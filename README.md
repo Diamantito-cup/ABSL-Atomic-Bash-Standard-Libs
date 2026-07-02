@@ -22,10 +22,6 @@
 
 ---
 
----
-
----
-
 Mis Librerias de Bash personales, algo simple... bueno, no tan simple, jajajaja, pero la verdad es interesante jugar con las configuraciones de Bash, pero bueno, aquí les traigo en detalle el porqué y como usar estas cosas
 
 ---
