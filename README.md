@@ -62,6 +62,17 @@ Basta para tener TODA la libreria dentro de su proyecto de bash.
 
 ---
 
+<h2 align="center">Tutorial</h2>
+
+Bueno... con la nueva versión `v0.1-Dev` que acabo de lanzar, ya tenemos disponible un tutorial de uso y una demo para desarrolladores dentro de la carpeta `examples/`, ahora mismo tenemos dos: `tutorial.sh` y `demo.sh`, el tutorial lo que hace es darte una introducción al sistema ABSL y sus funciones, modulos y capacidades actuales, pero bueno, ya, a lo que vinieron, ***¿Como crjs uso el tutorial?*** y la respuesta es bastante simple, basta con hacer lo siguiente:
+```bash
+cd ~/ABSL && chmod +x examples/tutorial.sh
+./examples/tutorial.sh
+```
+Y listo, tienen el tutorial interactivo >:3.
+
+---
+
 Gracias por leer y nos vemos, que tengan un bonito día <3
 
 > --> By Ange^_^
