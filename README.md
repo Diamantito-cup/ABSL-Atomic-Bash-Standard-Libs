@@ -8,7 +8,7 @@
 
 <div align="center">
 
-[![GitHub License](https://img.shields.io/github/license/Diamantito-cup/ABSL-Atomic-Bash-Standard-Libs?style=flat-square&color=cdd6f4&labelColor=1e1e2e)](https://github.com/Diamantito-cup/ABSL-Atomic-Bash-Standard-Libs/blob/MainStream/LICENSE)
+[![GitHub License](https://img.shields.io/github/license/Diamantito-cup/ABSL-Atomic-Bash-Standard-Libs?branch=MainStream&style=flat-square&color=cdd6f4&labelColor=1e1e2e)](https://github.com/Diamantito-cup/ABSL-Atomic-Bash-Standard-Libs/blob/MainStream/LICENSE)
 [![GitHub Top Language](https://img.shields.io/github/languages/top/Diamantito-cup/ABSL-Atomic-Bash-Standard-Libs?style=flat-square&color=a6e3a1&labelColor=1e1e2e&label=shell)]()
 [![GitHub Repo Size](https://img.shields.io/github/repo-size/Diamantito-cup/ABSL-Atomic-Bash-Standard-Libs?style=flat-square&color=89b4fa&labelColor=1e1e2e&label=size)]()
 [![GitHub Commits](https://img.shields.io/github/commit-activity/m/Diamantito-cup/ABSL-Atomic-Bash-Standard-Libs?style=flat-square&color=f5c2e7&labelColor=1e1e2e&label=commits)]()
