@@ -52,7 +52,7 @@ Entonces, teniendo en cuenta esto, vamos con lo que quieren y... la verdad no sa
 
 Pues, es relativamente facil, les sugiero hacerlo por `git clone` que es más simple de lo que parece:
 ```bash
-git clone https://github.com/Diamantito-cup/ABSL-Atomic-Bash-Standard-Libs/ ~/ABSL
+git clone https://github.com/Diamantito-cup/ABSL-Atomic-Bash-Standard-Libs.git ~/ABSL
 ```
 Y listo :D ahí tienen esta libreria completa por si la quieren usar, y el metodo de uso es bastante simple, solo con hacer:
 ```bash
