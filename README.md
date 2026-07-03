@@ -48,15 +48,71 @@ Entonces, teniendo en cuenta esto, vamos con lo que quieren y... la verdad no sa
 
 ---
 
+<h2 align="center">Estructura de este repositorio</h2>
+
+La estructura de este repositorio se rige por las 8 carpetas *(directorios)* donde se alojan las distintas utilidades de ASBL:
+
+<details>
+<summary>Estructura del repositorio</summary>
+
+```text
+.
+├── ABSL.sh
+├── Build
+│   ├── build_iso.sh
+│   ├── build_utils.sh
+│   ├── examples
+│   ├── Git
+│   ├── Logs
+│   ├── package.sh
+│   ├── release.sh
+│   └── System
+├── examples
+│   ├── demo.sh
+│   └── tutorial.sh
+├── Git
+│   ├── branch.sh
+│   └── commit.sh
+├── LICENSE
+├── Logs
+│   ├── colors.sh
+│   └── logger.sh
+├── README.md
+├── System
+│   ├── distro.sh
+│   ├── filesystem.sh
+│   ├── packages.sh
+│   └── sudo.sh
+├── UI
+│   ├── banner.sh
+│   ├── prompt.sh
+│   ├── spinner.sh
+│   └── theme.sh
+└── Utils
+    ├── arrays.sh
+    ├── helpers.sh
+    ├── math.sh
+    ├── strings.sh
+    └── validation.sh
+```
+
+</details>
+
+---
+
 <h2 align="center">¿Cómo usarlo en mis propios proyectos?</h2>
 
 Pues, es relativamente facil, les sugiero hacerlo por `git clone` que es más simple de lo que parece:
 ```bash
-git clone https://github.com/Diamantito-cup/ABSL-Atomic-Bash-Standard-Libs/ ~/ABSL
+git clone https://github.com/Diamantito-cup/ABSL-Atomic-Bash-Standard-Libs.git ~/ABSL
 ```
 Y listo :D ahí tienen esta libreria completa por si la quieren usar, y el metodo de uso es bastante simple, solo con hacer:
 ```bash
+#!/usr/bin/env bash
+
 source ~/ABSL/ABSL.sh
+
+absl::log_success "Hola mundo"
 ```
 Basta para tener TODA la libreria dentro de su proyecto de bash.
 
