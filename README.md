@@ -56,7 +56,11 @@ git clone https://github.com/Diamantito-cup/ABSL-Atomic-Bash-Standard-Libs.git ~
 ```
 Y listo :D ahí tienen esta libreria completa por si la quieren usar, y el metodo de uso es bastante simple, solo con hacer:
 ```bash
+#!/usr/bin/env bash
+
 source ~/ABSL/ABSL.sh
+
+absl::log_success "Hola mundo"
 ```
 Basta para tener TODA la libreria dentro de su proyecto de bash.
 
