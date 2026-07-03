@@ -16,7 +16,7 @@ absl_build_archive() {
   case "$format" in
     "tar.gz") tar -czf "$output_file.$format" -C "$(dirname "$source_dir")" "$(basename "$source_dir")" ;;
     "tar.xz") tar -cJf "$output_file.$format" -C "$(dirname "$source_dir")" "$(basename "$source_dir")" ;;
-    *) absl_log_error "Formato '$format' no soportado. Use tar.gz o tar.zst"; return 1 ;;
+    *) absl_log_error "Formato '$format' no soportado. Use tar.gz, tar.xz o tar.zst"; return 1 ;;
   esac
 
   if [[ $? -eq 0 ]]; then
@@ -39,5 +39,5 @@ absl_build_arch_pkg() {
   
   # Simulación de creación de paquete .pkg.tar.zst (estándar Arch)
   # En un entorno real, esto podría llamar a makepkg o crear el archivo manualmente
-  absl::build_archive "$source_dir" "$out_dir/$pkg_name-$version" "tar.zst"
+  absl_build_archive "$source_dir" "$out_dir/$pkg_name-$version" "tar.zst"
 }

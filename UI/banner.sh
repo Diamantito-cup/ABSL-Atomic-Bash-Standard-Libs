@@ -5,12 +5,12 @@
 absl_ui_banner_absl() {
   clear
   printf "${CLR_CYAN} ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ${CLR_RESET}\n"
-  printf "${CLR_MAGENTA}  █████╗ ██████╗ ██████╗ ╚██╗    ██╗  ██████╗ ${CLR_CYAN}██████╗ ██████╗ ███████╗${CLR_RESET}\n"
-  printf "${CLR_MAGENTA} ██╔══██╗██╔══██╗██╔══██╗ ╚██╗  ██╔╝ ██╔════╝ ${CLR_CYAN}██╔══██╗██╔══██╗██╔════╝${CLR_RESET}\n"
-  printf "${CLR_MAGENTA} ███████║██████╔╝██████╔╝  ╚██╗██╔╝  ██║      ${CLR_CYAN}██████╔╝██████╔╝█████╗  ${CLR_RESET}\n"
-  printf "${CLR_MAGENTA} ██╔══██║██╔══██╗██╔══██╗   ╚██╔╝    ██║      ${CLR_CYAN}██╔══██╗██╔══██╗██╔══╝  ${CLR_RESET}\n"
-  printf "${CLR_MAGENTA} ██║  ██║██║  ██║██║  ██║    ██║     ██████╗   ${CLR_CYAN}██║  ██║██║  ██║███████╗${CLR_RESET}\n"
-  printf "${CLR_MAGENTA} ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝    ╚═╝     ╚═════╝   ${CLR_CYAN}╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝${CLR_RESET}\n"
+  printf "${CLR_MAGENTA}  █████╗ ██████╗ ███████╗██╗     ${CLR_RESET}\n"
+  printf "${CLR_MAGENTA} ██╔══██╗██╔══██╗██╔════╝██║     ${CLR_RESET}\n"
+  printf "${CLR_MAGENTA} ███████║██████╔╝███████╗██║     ${CLR_RESET}\n"
+  printf "${CLR_MAGENTA} ██╔══██║██╔══██╗╚════██║██║     ${CLR_RESET}\n"
+  printf "${CLR_MAGENTA} ██║  ██║███████║██╔══██║███████╗${CLR_RESET}\n"
+  printf "${CLR_MAGENTA} ╚═╝  ╚═╝╚═════╝╚══════╝╚══════╝${CLR_RESET}\n"
   printf "${CLR_CYAN} ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ${CLR_RESET}\n"
   printf "${CLR_MAGENTA}                Atomic Bash Standard Libs - The Power of Modularity ${CLR_RESET}\n"
   printf "${CLR_CYAN} ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ${CLR_RESET}\n"
@@ -33,9 +33,13 @@ absl_ui_banner_atomic() {
 absl_ui_banner_custom() {
   local text="${1:-Custom Banner}"
   local color="${2:-$CLR_CYAN}"
+  local style="${3:-single}" # single o double
   
+  local line="━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  [[ "$style" == "double" ]] && line="════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════"
+
   clear
-  printf "${color} ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ${CLR_RESET}\n"
+  printf "${color} ${line} ${CLR_RESET}\n"
   printf "${color}                                  %s                                  ${CLR_RESET}\n" "$text"
-  printf "${color} ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ${CLR_RESET}\n"
+  printf "${color} ${line} ${CLR_RESET}\n"
 }
