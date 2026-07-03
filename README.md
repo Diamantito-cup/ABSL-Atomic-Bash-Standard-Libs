@@ -48,6 +48,58 @@ Entonces, teniendo en cuenta esto, vamos con lo que quieren y... la verdad no sa
 
 ---
 
+<h2 align="center">Estructura de este repositorio</h2>
+
+La estructura de este repositorio se rige por las 8 carpetas *(directorios)* donde se alojan las distintas utilidades de ASBL:
+
+<details>
+<summary>Estructura del repositorio</summary>
+
+```text
+.
+├── ABSL.sh
+├── Build
+│   ├── build_iso.sh
+│   ├── build_utils.sh
+│   ├── examples
+│   ├── Git
+│   ├── Logs
+│   ├── package.sh
+│   ├── release.sh
+│   └── System
+├── examples
+│   ├── demo.sh
+│   └── tutorial.sh
+├── Git
+│   ├── branch.sh
+│   └── commit.sh
+├── LICENSE
+├── Logs
+│   ├── colors.sh
+│   └── logger.sh
+├── README.md
+├── System
+│   ├── distro.sh
+│   ├── filesystem.sh
+│   ├── packages.sh
+│   └── sudo.sh
+├── UI
+│   ├── banner.sh
+│   ├── prompt.sh
+│   ├── spinner.sh
+│   └── theme.sh
+└── Utils
+    ├── arrays.sh
+    ├── helpers.sh
+    ├── math.sh
+    ├── strings.sh
+    └── validation.sh
+```
+
+</details>
+
+---
+
 <h2 align="center">¿Cómo usarlo en mis propios proyectos?</h2>
 
 Pues, es relativamente facil, les sugiero hacerlo por `git clone` que es más simple de lo que parece:
