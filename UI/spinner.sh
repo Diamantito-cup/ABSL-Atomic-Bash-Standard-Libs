@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # ABSL Component: Loading Spinners
 
-absl::ui_spinner_start() {
+absl_ui_spinner_start() {
   local msg="${1:-Cargando}"
   # Start spinner in background
   (
@@ -18,7 +18,7 @@ absl::ui_spinner_start() {
   SPINNER_PID=$!
 }
 
-absl::ui_spinner_stop() {
+absl_ui_spinner_stop() {
   if [[ -n $SPINNER_PID ]]; then
     kill $SPINNER_PID &>/dev/null
     wait $SPINNER_PID 2>/dev/null

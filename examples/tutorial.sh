@@ -4,12 +4,9 @@
 # Importar la librería
 source "$(dirname "${BASH_SOURCE[0]}")/../ABSL.sh"
 
-# Calcular funciones cargadas dinámicamente
-FUNC_COUNT=$(declare -F | grep "absl::" | wc -l)
-VERSION="0.1-dev"
+# Usar el banner oficial de la librería
+absl_ui_banner_absl
 
-# --- CABECERA ESTILIZADA ---
-absl::ui_banner
 printf "${CLR_CYAN} ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ${CLR_RESET}\n"
 printf "${CLR_GREEN}  📦 Módulos disponibles:${CLR_RESET}\n"
 printf "  ✔ UI\n  ✔ Logs\n  ✔ System\n  ✔ Utils\n  ✔ Git\n  ✔ Build\n"
@@ -29,57 +26,57 @@ while true; do
   case "$choice" in
   1)
     echo -e "\n--- 🎨 Demo UI ---"
-    if absl::ui_ask_yes_no "Ejecutar spinner?"; then
-      absl::ui_spinner_start "Animando interfaz..."
+    if absl_ui_ask_yes_no "Ejecutar spinner?"; then
+      absl_ui_spinner_start "Animando interfaz..."
       sleep 2
-      absl::ui_spinner_stop
-      absl::log_success "UI OK"
+      absl_ui_spinner_stop
+      absl_log_success "UI OK"
     fi
     ;;
   2)
     echo -e "\n--- 📝 Demo Logs ---"
-    absl::log_info "Información"
-    absl::log_success "Éxito"
-    absl::log_warn "Advertencia"
-    absl::log_error "Error"
+    absl_log_info "Información"
+    absl_log_success "Éxito"
+    absl_log_warn "Advertencia"
+    absl_log_error "Error"
     ;;
   3)
     echo -e "\n--- ⚙️ Demo System ---"
-    absl::log_info "Distro: $(absl::sys_get_distro)"
-    absl::sys_fs_ensure_dir "/tmp/absl_test"
-    absl::log_success "Directorio asegurado."
+    absl_log_info "Distro: $(absl_sys_get_distro)"
+    absl_sys_fs_ensure_dir "/tmp/absl_test"
+    absl_log_success "Directorio asegurado."
     ;;
   4)
     echo -e "\n--- 🛠️ Demo Utils ---"
-    absl::log_info "Texto: $(absl::util_to_upper "absl es genial")"
+    absl_log_info "Texto: $(absl_util_to_upper "absl es genial")"
     echo "Operaciones Enteras:"
-    absl::log_info "Suma: 2+2 = $(absl::util_math_add 2 2)"
-    absl::log_info "Potencia: 2^3 = $(absl::util_math_pow 2 3)"
-    absl::log_info "Modulo: 10%3 = $(absl::util_math_mod 10 3)"
+    absl_log_info "Suma: 2+2 = $(absl_util_math_add 2 2)"
+    absl_log_info "Potencia: 2^3 = $(absl::util_math_pow 2 3)"
+    absl_log_info "Modulo: 10%3 = $(absl::util_math_mod 10 3)"
 
     echo "Operaciones de Precisión (bc):"
-    if absl::sys_pkg_installed "bc"; then
-      absl::log_info "División precisa: 10/3 = $(absl::util_math_precise "10/3" 4)"
-      absl::log_info "Cálculo complejo: (5*2.5)+1.2 = $(absl::util_math_precise "(5*2.5)+1.2")"
+    if absl_sys_pkg_installed "bc"; then
+      absl_log_info "División precisa: 10/3 = $(absl_util_math_precise "10/3" 4)"
+      absl_log_info "Cálculo complejo: (5*2.5)+1.2 = $(absl_util_math_precise "(5*2.5)+1.2")"
     else
-      absl::log_warn "Saltando demo de precisión: 'bc' no está instalado."
-      absl::log_info "Tip: Puedes instalarlo con 'sudo pacman -S bc'"
+      absl_log_warn "Saltando demo de precisión: 'bc' no está instalado."
+      absl_log_info "Tip: Puedes instalarlo con 'sudo pacman -S bc'"
     fi
     ;;
 
   5)
     echo -e "\n--- 🌿 Demo Git ---"
-    absl::log_info "Funciones: absl::git_commit, absl::git_sync, absl::git_branch_create"
-    absl::log_warn "Ejecuta esto dentro de un repo git para probar."
+    absl_log_info "Funciones: absl::git_commit, absl::git_sync, absl::git_branch_create"
+    absl_log_warn "Ejecuta esto dentro de un repo git para probar."
     ;;
   6)
     echo -e "\n--- 📦 Demo Build ---"
-    absl::log_info "Probando empaquetado simulado..."
+    absl_log_info "Probando empaquetado simulado..."
     # Creamos un archivo temporal para empaquetar
     mkdir -p /tmp/absl_pkg_test && touch /tmp/absl_pkg_test/file.txt
-    absl::build_archive "/tmp/absl_pkg_test" "/tmp/absl_test_pkg" "tar.gz"
-    absl::sys_fs_cleanup "/tmp/absl_pkg_test"
-    absl::sys_fs_cleanup "/tmp/absl_test_pkg.tar.gz"
+    absl_build_archive "/tmp/absl_pkg_test" "/tmp/absl_test_pkg" "tar.gz"
+    absl_sys_fs_cleanup "/tmp/absl_pkg_test"
+    absl_sys_fs_cleanup "/tmp/absl_test_pkg.tar.gz"
     ;;
   q)
     printf "${CLR_CYAN} ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ${CLR_RESET}\n"
@@ -92,7 +89,7 @@ while true; do
     ;;
 
   *)
-    absl::log_error "Opción no válida."
+    absl_log_error "Opción no válida."
     ;;
   esac
   echo -e "\n${CLR_CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${CLR_RESET}\n"

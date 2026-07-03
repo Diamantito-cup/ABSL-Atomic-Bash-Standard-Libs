@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 # ABSL Component: Array Helpers
 
-absl::util_array_len() {
+absl_util_array_len() {
   local arr=("$@")
   echo "${#arr[@]}"
 }
 
-absl::util_array_contains() {
+absl_util_array_contains() {
   local search="${1}"
   shift
   local arr=("$@")

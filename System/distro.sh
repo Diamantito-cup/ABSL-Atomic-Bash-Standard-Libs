@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # ABSL Component: Distro Detection
 
-absl::sys_get_distro() {
+absl_sys_get_distro() {
   if [[ -f /etc/os-release ]]; then
     . /etc/os-release
     echo "$ID"
@@ -10,6 +10,6 @@ absl::sys_get_distro() {
   fi
 }
 
-absl::sys_is_arch() {
-  [[ "$(absl::sys_get_distro)" == "arch" ]]
+absl_sys_is_arch() {
+  [[ "$(absl_sys_get_distro)" == "arch" ]]
 }

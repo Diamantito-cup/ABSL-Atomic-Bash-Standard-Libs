@@ -37,5 +37,8 @@ source "${ABSL_ROOT_DIR}/Utils/helpers.sh"
 source "${ABSL_ROOT_DIR}/Git/commit.sh"
 source "${ABSL_ROOT_DIR}/Git/branch.sh"
 
+# 6. Core Dispatcher (La capa de belleza)
+source "${ABSL_ROOT_DIR}/ABSL_core.sh"
+
 
 export ABSL_LOADED=1
