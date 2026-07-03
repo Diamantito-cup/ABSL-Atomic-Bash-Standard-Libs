@@ -22,7 +22,7 @@ absl::ui_spinner_stop() {
   if [[ -n $SPINNER_PID ]]; then
     kill $SPINNER_PID &>/dev/null
     wait $SPINNER_PID 2>/dev/null
-    printf "\r" # Clear the line
+    printf "\r\033[K" # Clear the entire line
     unset SPINNER_PID
   fi
 }

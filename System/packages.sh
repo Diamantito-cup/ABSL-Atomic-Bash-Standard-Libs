@@ -1,11 +1,15 @@
 #!/usr/bin/env bash
 # ABSL Component: Package Management & Dependency Checks
 
+absl::sys_pkg_installed() {
+  command -v "$1" &>/dev/null
+}
+
 absl::sys_require_pkg() {
   local pkg="$1"
   local install_cmd="${2:-sudo pacman -S}" # Default to pacman (Arch)
 
-  if ! command -v "$pkg" &>/dev/null; then
+  if ! absl::sys_pkg_installed "$pkg"; then
     absl::log_warn "La dependencia '$pkg' no está instalada."
     
     read -p "❓ ¿Deseas intentar instalarla ahora? (s/N): " choice

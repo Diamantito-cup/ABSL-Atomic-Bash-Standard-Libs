@@ -21,14 +21,21 @@ source "${ABSL_ROOT_DIR}/UI/spinner.sh"
 source "${ABSL_ROOT_DIR}/System/sudo.sh"
 source "${ABSL_ROOT_DIR}/System/distro.sh"
 source "${ABSL_ROOT_DIR}/System/packages.sh"
+source "${ABSL_ROOT_DIR}/System/filesystem.sh"
+
+# 3.5 Build Utils
+source "${ABSL_ROOT_DIR}/Build/build_utils.sh"
 
 # 4. Utils
 source "${ABSL_ROOT_DIR}/Utils/strings.sh"
 source "${ABSL_ROOT_DIR}/Utils/validation.sh"
+source "${ABSL_ROOT_DIR}/Utils/arrays.sh"
+source "${ABSL_ROOT_DIR}/Utils/math.sh"
 source "${ABSL_ROOT_DIR}/Utils/helpers.sh"
 
 # 5. Git
 source "${ABSL_ROOT_DIR}/Git/commit.sh"
+source "${ABSL_ROOT_DIR}/Git/branch.sh"
 
 
 export ABSL_LOADED=1
