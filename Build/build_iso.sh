@@ -7,12 +7,12 @@ source "${SCRIPT_DIR}/../ABSL.sh"
 # --- A PARTIR DE AQUÍ TIENES TODA LA API DISPONIBLE ---
 
 # Dibujar la interfaz de Atomic Linux
-absl::ui_banner
+absl_ui_banner_atomic
 
 # Validar dependencias con los helpers de Utils/
-absl::log_info "Verificando el entorno de compilación host..."
-absl::sys_require_cmd "mkarchiso"
-absl::sys_require_root
+absl_log_info "Verificando el entorno de compilación host..."
+absl_sys_require_cmd "mkarchiso"
+absl_sys_require_root
 
 # Ejecutar el núcleo del motor
-absl::log_success "Entorno listo. Desplegando mkarchiso..."
+absl_log_success "Entorno listo. Desplegando mkarchiso..."

@@ -16,6 +16,7 @@ absl_build_archive() {
   case "$format" in
     "tar.gz") tar -czf "$output_file.$format" -C "$(dirname "$source_dir")" "$(basename "$source_dir")" ;;
     "tar.xz") tar -cJf "$output_file.$format" -C "$(dirname "$source_dir")" "$(basename "$source_dir")" ;;
+    "tar.zst") tar -I zstd -cf "$output_file.$format" -C "$(dirname "$source_dir")" "$(basename "$source_dir")" ;;
     *) absl_log_error "Formato '$format' no soportado. Use tar.gz, tar.xz o tar.zst"; return 1 ;;
   esac
 

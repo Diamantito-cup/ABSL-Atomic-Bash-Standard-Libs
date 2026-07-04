@@ -4,6 +4,9 @@
 # Importar la librería
 source "$(dirname "${BASH_SOURCE[0]}")/../ABSL.sh"
 
+VERSION="0.1-Dev"
+FUNC_COUNT=$(declare -F | grep -c "^absl_")
+
 # Usar el banner oficial de la librería
 absl_ui_banner_absl
 
@@ -51,8 +54,8 @@ while true; do
     absl_log_info "Texto: $(absl_util_to_upper "absl es genial")"
     echo "Operaciones Enteras:"
     absl_log_info "Suma: 2+2 = $(absl_util_math_add 2 2)"
-    absl_log_info "Potencia: 2^3 = $(absl::util_math_pow 2 3)"
-    absl_log_info "Modulo: 10%3 = $(absl::util_math_mod 10 3)"
+    absl_log_info "Potencia: 2^3 = $(absl_util_math_pow 2 3)"
+    absl_log_info "Modulo: 10%3 = $(absl_util_math_mod 10 3)"
 
     echo "Operaciones de Precisión (bc):"
     if absl_sys_pkg_installed "bc"; then
@@ -66,7 +69,7 @@ while true; do
 
   5)
     echo -e "\n--- 🌿 Demo Git ---"
-    absl_log_info "Funciones: absl::git_commit, absl::git_sync, absl::git_branch_create"
+    absl_log_info "Funciones: absl_git_commit, absl_git_sync, absl_git_branch_create"
     absl_log_warn "Ejecuta esto dentro de un repo git para probar."
     ;;
   6)
