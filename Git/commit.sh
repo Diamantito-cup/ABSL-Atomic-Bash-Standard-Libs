@@ -12,6 +12,9 @@ absl_git_commit() {
 }
 
 absl_git_sync() {
-  absl_log_info "Sincronizando con el repositorio remoto..."
-  git pull origin main && git push origin main
+  local branch
+  branch=$(git rev-parse --abbrev-ref HEAD)
+  
+  absl_log_info "Sincronizando con la rama '$branch' en el repositorio remoto..."
+  git pull origin "$branch" && git push origin "$branch"
 }
